@@ -9,8 +9,16 @@
 </style>
 
 <div class="example-wrapper">
-
     <h1> Bienvenu(e)s dans ce Super Blog ! ✅</h1>
-
+{% for blog_message in blog_messages %}
+            <div class="row">
+                <div class="col">{{ blog_message.title }}</div>
+            </div>
+            <div class="row">{{ blog_message.message }}</div>
+        {% else %}
+            <div class="row">
+                <td colspan="4">no records found</td>
+            </div>
+        {% endfor %}
 </div>
 {% endblock %}
